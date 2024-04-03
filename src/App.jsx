@@ -1,20 +1,29 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import { Logo } from './Logo'
+import { Header } from './Header'
+import { Main } from './pages/Main'
 
 function App() {
+  const [showLogo, setShowLogo] = useState(true)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowLogo(false)
+    }, 3000)
+    return () => clearTimeout(timeout)
+  }, [])
+
   return (
     <div className="wrapper">
-      <header className="header">
-        header
-        {/* <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a> */}
-      </header>
-      <main className="main">content</main>
-      <footer className="footer">footer</footer>
+      {showLogo ? (
+        <Logo />
+      ) : (
+        <>
+          <Header />
+          <Main />
+          <footer className="footer">footer</footer>
+        </>
+      )}
     </div>
   )
 }

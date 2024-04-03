@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.list {
+  .item {
+    border-radius: 20px;
+    padding: $margin1;
+    background-color: #fff;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: $margin1 0;
+      border-bottom: 1px solid $lightGrey;
+
+      .text {
+        font-size: $text-size-0;
+      }
+
+      .img {
+        width: $logoSize2;
+        height: $logoSize2;
+      }
+    }
+
+    .middle {
+      padding: $margin1 0;
+
+      .points {
+        display: flex;
+        align-items: flex-end;
+        gap: $margin2;
+
+        .pointsPrice {
+          font-size: $text-size-0;
+        }
+
+        .pointsDesc {
+          font-size: $text-size-2;
+          color: $darkGrey;
+        }
+      }
+    }
+  }
+}
