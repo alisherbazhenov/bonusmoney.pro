@@ -14,6 +14,16 @@ export const Card = () => {
             <p className={styles.pointsPrice}>200</p>
             <span className={styles.pointsDesc}>баллов</span>
           </div>
+          <div className={styles.cashbackBox}>
+            <div className={styles.cashbackLeft}>
+              <span className={styles.cashbackText}>Кэшбек</span>
+              <p className={styles.cashbackLevel}>47%</p>
+            </div>
+            <div className={styles.cashbackRight}>
+              <span className={styles.cashbackText}>Уровень</span>
+              <p className={styles.cashbackLevel}>Первый</p>
+            </div>
+          </div>
         </div>
         <div className={styles.bottom}></div>
       </li>

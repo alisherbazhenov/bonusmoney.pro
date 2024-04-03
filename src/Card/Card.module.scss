@@ -25,6 +25,7 @@
 
     .middle {
       padding: $margin1 0;
+      border-bottom: 1px solid $lightGrey;
 
       .points {
         display: flex;
@@ -39,6 +40,21 @@
           font-size: $text-size-2;
           color: $darkGrey;
         }
+      }
+    }
+
+    .cashbackBox {
+      display: flex;
+      padding: $margin1 0 0;
+      gap: $margin3;
+
+      .cashbackLeft,
+      .cashbackRight {
+        text-align: start;
+      }
+
+      .cashbackText {
+        color: $darkGrey;
       }
     }
   }
