@@ -1,0 +1,1 @@
+export { BtnMore } from './BtnMore'

@@ -1,0 +1,9 @@
+@import '../variables.scss';
+
+.btn {
+  border-radius: 10px;
+  background-color: $lightGrey;
+  color: $color-blue;
+  padding: $margin-3vw $margin0;
+  font-size: $text-size-2;
+}

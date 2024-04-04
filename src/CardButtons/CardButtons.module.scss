@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.list {
+  display: flex;
+  gap: $margin3;
+
+  .item {
+    cursor: pointer;
+  }
+  .icons {
+    width: $iconSize;
+    height: $iconSize;
+  }
+}

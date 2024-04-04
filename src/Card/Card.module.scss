@@ -24,7 +24,7 @@
     }
 
     .middle {
-      padding: $margin1 0;
+      padding: $margin1 0 $margin2;
       border-bottom: 1px solid $lightGrey;
 
       .points {
@@ -51,11 +51,21 @@
       .cashbackLeft,
       .cashbackRight {
         text-align: start;
+        display: flex;
+        flex-direction: column;
       }
 
       .cashbackText {
         color: $darkGrey;
+        margin-bottom: $margin2;
       }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $margin2 0 0;
     }
   }
 }
