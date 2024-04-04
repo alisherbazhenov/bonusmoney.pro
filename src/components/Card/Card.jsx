@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BtnMore } from '../BtnMore'
-import { Modal } from '../Modal/Modal'
-import { CardButtons } from '../CardButtons/CardButtons'
+import { Modal } from '../Modal'
+import { CardButtons } from '../CardButtons'
 import styles from './Card.module.scss'
 import cardLogo from '/img/logo.png'
 

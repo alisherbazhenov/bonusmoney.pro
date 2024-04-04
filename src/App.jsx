@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Logo } from './Logo'
-import { Header } from './Header'
+import { Logo } from './components/Logo'
+import { Header } from './components/Header'
 import { Main } from './pages/Main'
 
 function App() {
