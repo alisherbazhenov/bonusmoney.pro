@@ -69,3 +69,11 @@
     }
   }
 }
+
+.btnOk {
+  color: white;
+  background-color: $color-blue;
+  padding: $margin2 $margin0;
+  border-radius: 12px;
+  margin-bottom: $margin-3vw;
+}

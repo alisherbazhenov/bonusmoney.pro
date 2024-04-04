@@ -1,13 +1,19 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { BtnMore } from '../BtnMore'
 import { Modal } from '../Modal'
 import { CardButtons } from '../CardButtons'
 import styles from './Card.module.scss'
 import cardLogo from '/img/logo.png'
+import { hideModal, openModal } from '../Modal/Modal'
 
 export const Card = () => {
-  const [isModalOpen, setModalOpen] = useState(false)
-  const title = 'Профиль успешно обновлен'
+  // const [isModalOpen, setModalOpen] = useState(false)
+  const moreBtnOpen = 'Профиль успешно обновлен'
+  const moreBtnClose = 'Хорошо'
+  const trashBtnOpen = 'Удаление карты!'
+  const trashBtnClose = 'Удалить'
+  const eyeBtnOpen = 'Подробная информация!'
+  const eyeBtnClose = 'Закрыть'
 
   return (
     <div>
@@ -35,12 +41,31 @@ export const Card = () => {
           </div>
           <div className={styles.bottom}>
             <CardButtons />
-            <BtnMore onClick={() => setModalOpen(true)} />
+            <BtnMore onClick={() => openModal('moreButton')} />
           </div>
         </li>
       </ul>
 
-      {isModalOpen && <Modal onClose={() => setModalOpen(false)}>{title}</Modal>}
+      <Modal id="moreButton">
+        {moreBtnOpen}
+        <button onClick={() => hideModal('moreButton')} className={styles.btnOk}>
+          {moreBtnClose}
+        </button>
+      </Modal>
+
+      <Modal id="trashBtn">
+        {trashBtnOpen}
+        <button onClick={() => hideModal('trashBtn')} className={styles.btnOk}>
+          {trashBtnClose}
+        </button>
+      </Modal>
+
+      <Modal id="eyeBtn">
+        {eyeBtnOpen}
+        <button onClick={() => hideModal('eyeBtn')} className={styles.btnOk}>
+          {eyeBtnClose}
+        </button>
+      </Modal>
     </div>
   )
 }

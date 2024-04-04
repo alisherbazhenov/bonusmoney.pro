@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react'
 import { Logo } from './components/Logo'
 import { Header } from './components/Header'
 import { Main } from './pages/Main'
+import { apiFetch } from './api/cardsData'
 
 function App() {
   const [showLogo, setShowLogo] = useState(true)
+
+  // useEffect(() => {
+  //   apiFetch()
+  // }, [])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
