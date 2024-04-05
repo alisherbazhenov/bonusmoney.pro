@@ -14,11 +14,11 @@ export const Card = () => {
   const [cardsData, setCardsData] = useState([])
   const [error, setError] = useState(null)
 
-  const { cardItems } = useSelector(state => state.cards)
-  console.log(cardItems)
+  // const { cardItems } = useSelector(state => state.cards)
+  // console.log(cardItems)
   // const dispatch = useDispatch()
 
-  const moreBtnOpen = 'Профиль успешно обновлен'
+  const moreBtnOpen = 'Нажата кнопка подробнее'
   const moreBtnClose = 'Хорошо'
   const trashBtnOpen = 'Удаление карты!'
   const trashBtnClose = 'Удалить'
@@ -40,6 +40,7 @@ export const Card = () => {
   }, [])
 
   // console.log('описание ошибки', error)
+  // console.log(cardsData.companyId)
 
   if (error) {
     return (
