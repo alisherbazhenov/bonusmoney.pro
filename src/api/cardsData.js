@@ -1,13 +1,37 @@
-export const apiFetch = () => {
-  fetch('https://schema.getpostman.com/json/collection/v2.0.0/collection.json')
-    .then(res => res.json())
-    .then(data => console.log(data))
+export const fetchIdealCardsData = async () => {
+  try {
+    const response = await fetch('http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        TOKEN: '123',
+      },
+      body: JSON.stringify({
+        limit: 10,
+        offset: 0,
+      }),
+    })
 
-  console.log('first')
+    if (response.status === 401) {
+      throw new Error('Ошибка авторизации')
+    }
+
+    if (response.status === 400) {
+      const { message } = await response.json()
+      throw new Error(message)
+    }
+
+    if (response.status === 500) {
+      throw new Error('Все упало')
+    }
+
+    if (!response.ok) {
+      throw new Error('Произошла ошибка при загрузке данных')
+    }
+
+    const data = await response.json()
+    return data.companies
+  } catch (error) {
+    throw new Error(error.message)
+  }
 }
-
-// const data = async () => {
-//   const res = await fetch('https://skypro-music-api.skyeng.tech/catalog/selection/')
-//   const data = await res.json()
-//   setSelection(data)
-// }

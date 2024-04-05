@@ -6,6 +6,10 @@
     padding: $margin1;
     background-color: #fff;
 
+    &:not(:last-child) {
+      margin-bottom: $margin1;
+    }
+
     .top {
       display: flex;
       justify-content: space-between;
@@ -20,6 +24,7 @@
       .img {
         width: $logoSize2;
         height: $logoSize2;
+        border-radius: 50%;
       }
     }
 
