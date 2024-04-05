@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react'
 import { fetchIdealCardsData } from '../../api/cardsData'
 import { BtnMore } from '../BtnMore'
 import { Modal } from '../Modal'
-import { CardButtons } from '../CardButtons'
 import styles from './Card.module.scss'
 import { hideModal, openModal } from '../Modal/Modal'
+import eye from '/img/eye.svg'
+import trash from '/img/trash.svg'
 
 export const Card = () => {
   const [cardsData, setCardsData] = useState([])
@@ -63,11 +64,17 @@ export const Card = () => {
               color: card.mobileAppDashboard.highlightTextColor,
             }}
           >
-            <div className={styles.top}>
+            <div
+              className={styles.top}
+              style={{ borderBottom: `1px solid ${card.mobileAppDashboard.backgroundColor}` }}
+            >
               <div className={styles.text}>{card.mobileAppDashboard.companyName}</div>
               <img className={styles.img} src={card.mobileAppDashboard.logo} alt="Лого карты" />
             </div>
-            <div className={styles.middle}>
+            <div
+              className={styles.middle}
+              style={{ borderBottom: `1px solid ${card.mobileAppDashboard.backgroundColor}` }}
+            >
               <div className={styles.points}>
                 <p className={styles.pointsPrice}>{card.customerMarkParameters.mark}</p>
                 <span className={styles.pointsDesc} style={{ color: card.mobileAppDashboard.textColor }}>
@@ -90,8 +97,12 @@ export const Card = () => {
               </div>
             </div>
             <div className={styles.bottom}>
-              {/* <button onClick={() => dispatch(deleteCard(card.id))}>close</button> */}
-              <CardButtons style={{ fill: card.mobileAppDashboard.accentColor }} />
+              <button onClick={() => openModal('eyeBtn')}>
+                <img className={styles.icons} src={eye} alt="кнопка" />
+              </button>
+              <button onClick={() => openModal('trashBtn')}>
+                <img className={styles.icons} src={trash} alt="кнопка" />
+              </button>
               <BtnMore
                 onClick={() => openModal('moreButton')}
                 style={{

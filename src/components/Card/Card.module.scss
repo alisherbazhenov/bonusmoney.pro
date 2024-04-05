@@ -1,6 +1,7 @@
 @import '../../variables.scss';
 
 .list {
+  padding-top: 15%;
   .item {
     border-radius: 20px;
     padding: $margin1;
@@ -15,7 +16,6 @@
       justify-content: space-between;
       align-items: center;
       padding: $margin1 0;
-      border-bottom: 1px solid $lightGrey;
 
       .text {
         font-size: $text-size-0;
@@ -30,7 +30,6 @@
 
     .middle {
       padding: $margin1 0 $margin2;
-      border-bottom: 1px solid $lightGrey;
 
       .points {
         display: flex;
@@ -71,6 +70,11 @@
       align-items: center;
       justify-content: space-between;
       padding: $margin2 0 0;
+
+      .icons {
+        width: $iconSize;
+        height: $iconSize;
+      }
     }
   }
 }
