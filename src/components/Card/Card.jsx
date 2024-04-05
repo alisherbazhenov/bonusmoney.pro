@@ -1,3 +1,6 @@
+/* eslint-disable */
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteCard } from '../../features/card/cardSlice'
 import { useState, useEffect } from 'react'
 import { fetchIdealCardsData } from '../../api/cardsData'
 import { BtnMore } from '../BtnMore'
@@ -9,6 +12,10 @@ import { hideModal, openModal } from '../Modal/Modal'
 export const Card = () => {
   const [cardsData, setCardsData] = useState([])
   const [error, setError] = useState(null)
+
+  const { cardItems } = useSelector(state => state.cards)
+  console.log(cardItems)
+  // const dispatch = useDispatch()
 
   const moreBtnOpen = 'Профиль успешно обновлен'
   const moreBtnClose = 'Хорошо'
@@ -31,18 +38,18 @@ export const Card = () => {
     fetchData()
   }, [])
 
-  console.log('описание ошибки', error)
+  // console.log('описание ошибки', error)
 
-  // if (error) {
-  //   return (
-  //     <Modal id="error">
-  //       {error}
-  //       <button onClick={() => hideModal('error')} className={styles.btnOk}>
-  //         Закрыть
-  //       </button>
-  //     </Modal>
-  //   )
-  // }
+  if (error) {
+    return (
+      <Modal id="error">
+        {error}
+        <button onClick={() => hideModal('error')} className={styles.btnOk}>
+          Закрыть
+        </button>
+      </Modal>
+    )
+  }
 
   return (
     <div>
@@ -83,6 +90,7 @@ export const Card = () => {
               </div>
             </div>
             <div className={styles.bottom}>
+              {/* <button onClick={() => dispatch(deleteCard(card.id))}>close</button> */}
               <CardButtons style={{ fill: card.mobileAppDashboard.accentColor }} />
               <BtnMore
                 onClick={() => openModal('moreButton')}
