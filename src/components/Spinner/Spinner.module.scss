@@ -1,0 +1,33 @@
+@import '../../variables.scss';
+.pagePreloader {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  // background: #00a5f1;
+  z-index: 100500;
+}
+
+.pagePreloader .spinner {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  border: 4px solid rgba(0, 0, 0, 0.758);
+  border-top: 4px solid $lightGrey;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

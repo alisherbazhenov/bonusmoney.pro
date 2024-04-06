@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Logo } from './components/Logo'
 import { Header } from './components/Header'
 import { Main } from './pages/Main'
+import { Spinner } from './components/Spinner/Spinner'
 
 function App() {
   const [showLogo, setShowLogo] = useState(true)
@@ -9,7 +10,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowLogo(false)
-    }, 3000)
+    }, 1000)
     return () => clearTimeout(timeout)
   }, [])
 
@@ -21,7 +22,10 @@ function App() {
         <>
           <Header />
           <Main />
-          <footer className="footer">footer</footer>
+          <footer className="footer">
+            <Spinner />
+            Подгрузка компаний
+          </footer>
         </>
       )}
     </div>
