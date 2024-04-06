@@ -1,0 +1,85 @@
+@import '../../variables.scss';
+
+.item {
+  border-radius: 20px;
+  padding: $margin1;
+  background-color: #fff;
+
+  &:not(:last-child) {
+    margin-bottom: $margin1;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $margin1 0;
+
+    .text {
+      font-size: $text-size-0;
+    }
+
+    .img {
+      width: $logoSize2;
+      height: $logoSize2;
+      border-radius: 50%;
+    }
+  }
+
+  .middle {
+    padding: $margin1 0 $margin2;
+
+    .points {
+      display: flex;
+      align-items: flex-end;
+      gap: $margin2;
+
+      .pointsPrice {
+        font-size: $text-size-0;
+      }
+
+      .pointsDesc {
+        font-size: $text-size-2;
+        color: $darkGrey;
+      }
+    }
+  }
+
+  .cashbackBox {
+    display: flex;
+    padding: $margin1 0 0;
+    gap: $margin3;
+
+    .cashbackLeft,
+    .cashbackRight {
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cashbackText {
+      color: $darkGrey;
+      margin-bottom: $margin2;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $margin2 0 0;
+
+    .icons {
+      width: $iconSize;
+      height: $iconSize;
+    }
+  }
+
+  .btnOk {
+    color: white;
+    background-color: $color-blue;
+    padding: $margin2 $margin0;
+    border-radius: 12px;
+    margin-bottom: $margin-3vw;
+  }
+}

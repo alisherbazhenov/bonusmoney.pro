@@ -1,4 +1,3 @@
-/* eslint-disable */
 import styles from './Modal.module.scss'
 import cansel from '/img/cansel.svg'
 

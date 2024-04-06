@@ -1,6 +1,6 @@
-export const fetchIdealCardsData = async () => {
+export const fetchCardsData = async ({ offset = 0 }) => {
   try {
-    const response = await fetch('http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal', {
+    const response = await fetch('http://devapp.bonusmoney.pro/mobileapp/getAllCompanies', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -8,7 +8,7 @@ export const fetchIdealCardsData = async () => {
       },
       body: JSON.stringify({
         limit: 10,
-        offset: 0,
+        offset: offset,
       }),
     })
 
