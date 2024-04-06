@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Logo } from './components/Logo'
 import { Header } from './components/Header'
 import { Main } from './pages/Main'
-import { Spinner } from './components/Spinner/Spinner'
+// import { Spinner } from './components/Spinner/Spinner'
 
 function App() {
   const [showLogo, setShowLogo] = useState(true)
@@ -22,10 +22,7 @@ function App() {
         <>
           <Header />
           <Main />
-          <footer className="footer">
-            <Spinner />
-            Подгрузка компаний
-          </footer>
+          <footer className="footer">{/* <Spinner /> */}</footer>
         </>
       )}
     </div>

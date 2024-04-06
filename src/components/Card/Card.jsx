@@ -9,6 +9,7 @@ import styles from './Card.module.scss'
 import { hideModal, openModal } from '../Modal/Modal'
 import eye from '/img/eye.svg'
 import trash from '/img/trash.svg'
+import { Spinner } from '../Spinner/Spinner'
 
 export const Card = () => {
   const [cardsData, setCardsData] = useState([])
@@ -56,6 +57,7 @@ export const Card = () => {
   return (
     <div>
       <ul className={styles.list}>
+        {/* <Spinner /> */}
         {cardsData.map((card, index) => (
           <li
             key={index}

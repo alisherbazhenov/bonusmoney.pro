@@ -1,9 +1,8 @@
 @import '../../variables.scss';
 .pagePreloader {
   position: relative;
-  height: 100px;
+  height: $logoSize2;
   width: 100%;
-  // background: #00a5f1;
   z-index: 100500;
 }
 
@@ -21,6 +20,12 @@
   border-top: 4px solid $lightGrey;
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
+}
+
+.spinnerText {
+  font-size: $text-size-2;
+  padding: $margin2;
+  margin-bottom: $margin1;
 }
 
 @keyframes spin {
