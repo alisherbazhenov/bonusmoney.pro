@@ -2,7 +2,6 @@ export const EyeIcon = ({ color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="8vw"
       xmlSpace="preserve"
       style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2 }}
       viewBox="0 0 64 64"

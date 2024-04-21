@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import styles from './Main.module.scss'
 import { Spinner } from '../../components/Spinner/Spinner'
 import { CardItem } from '../../components/CardItem/CardItem'
-import { Modal } from '../../components/Modal'
 
 export const Main = () => {
   const dispatch = useDispatch()

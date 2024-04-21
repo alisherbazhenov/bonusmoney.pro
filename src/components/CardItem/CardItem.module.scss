@@ -6,7 +6,15 @@
   background-color: #fff;
 
   &:not(:last-child) {
-    margin-bottom: $margin1;
+    margin-bottom: 16px;
+
+    @media (width > 480px) {
+      margin-bottom: 28px;
+    }
+  }
+
+  @media (width > 480px) {
+    padding: 20px 32px;
   }
 
   .top {
@@ -15,32 +23,61 @@
     align-items: center;
     padding: $margin1 0;
 
+    @media (width > 480px) {
+      padding: 12px 0;
+    }
+
     .text {
       font-size: $text-size-0;
+
+      @media (width > 480px) {
+        font-size: 32px;
+      }
     }
 
     .img {
       width: $logoSize2;
       height: $logoSize2;
       border-radius: 50%;
+
+      @media (width > 480px) {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 
   .middle {
     padding: $margin1 0 $margin2;
 
+    @media (width > 480px) {
+      padding: 12px 0;
+    }
+
     .points {
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
       gap: $margin2;
+
+      @media (width > 480px) {
+        gap: 10px;
+      }
 
       .pointsPrice {
         font-size: $text-size-0;
+
+        @media (width > 480px) {
+          font-size: 46px;
+        }
       }
 
       .pointsDesc {
         font-size: $text-size-2;
         color: $darkGrey;
+
+        @media (width > 480px) {
+          font-size: 22px;
+        }
       }
     }
   }
@@ -48,18 +85,31 @@
   .cashbackBox {
     display: flex;
     padding: $margin1 0 0;
-    gap: $margin3;
+    gap: 12vw;
+
+    @media (width > 480px) {
+      padding: 28px 0 0;
+      gap: 100px;
+    }
 
     .cashbackLeft,
     .cashbackRight {
       text-align: start;
       display: flex;
       flex-direction: column;
+
+      @media (width < 480px) {
+        font-size: 12px;
+      }
     }
 
     .cashbackText {
       color: $darkGrey;
-      margin-bottom: $margin2;
+      margin-bottom: 6px;
+
+      @media (width < 480px) {
+        margin-bottom: 4px;
+      }
     }
   }
 
@@ -69,9 +119,38 @@
     justify-content: space-between;
     padding: $margin2 0 0;
 
-    .icons {
-      width: $iconSize;
-      height: $iconSize;
+    @media (width > 480px) {
+      padding: 12px 0 0;
+    }
+
+    .btnIcons {
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+
+      @media (width < 576px) {
+        width: 150px;
+      }
+
+      @media (width < 480px) {
+        width: 120px;
+      }
+
+      @media (width < 480px) {
+        width: 100px;
+      }
+    }
+
+    .btnEyeTrash {
+      width: 34px;
+
+      @media (width > 410px) {
+        width: 40px;
+      }
+      @media (width > 576px) {
+        width: 46px;
+      }
     }
   }
 

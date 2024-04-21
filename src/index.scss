@@ -90,16 +90,16 @@ img {
 
 #root {
   height: 100%;
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 
   .wrapper {
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
   }
 
   .content {
-    padding: 4vw;
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 12px;
   }
 }

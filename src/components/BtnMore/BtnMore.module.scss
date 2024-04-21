@@ -6,4 +6,8 @@
   color: $color-blue;
   padding: $margin-3vw $margin0;
   font-size: $text-size-2;
+  @media (width > 480px) {
+    padding: 14px 40px;
+    font-size: 22px;
+  }
 }

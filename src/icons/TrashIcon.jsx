@@ -1,6 +1,6 @@
 export const TrashIcon = ({ color }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="8vw" viewBox="0 0 32 32">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
       <g data-name="Layer 2">
         <path
           fill={color}

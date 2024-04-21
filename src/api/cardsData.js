@@ -1,6 +1,6 @@
 export const fetchCardsData = async ({ offset = 0 }) => {
   try {
-    const response = await fetch('http://devapp.bonusmoney.pro/mobileapp/getAllCompanies', {
+    const response = await fetch('http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

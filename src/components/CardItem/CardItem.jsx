@@ -50,12 +50,14 @@ export const CardItem = card => {
         </div>
       </div>
       <div className={styles.bottom}>
-        <button onClick={() => openModal(`eyeBtn-${card.company.companyId}`)}>
-          <EyeIcon color={card.mobileAppDashboard.textColor} />
-        </button>
-        <button onClick={() => openModal(`trashBtn-${card.company.companyId}`)}>
-          <TrashIcon color={card.mobileAppDashboard.accentColor} />
-        </button>
+        <div className={styles.btnIcons}>
+          <button className={styles.btnEyeTrash} onClick={() => openModal(`eyeBtn-${card.company.companyId}`)}>
+            <EyeIcon color={card.mobileAppDashboard.textColor} />
+          </button>
+          <button className={styles.btnEyeTrash} onClick={() => openModal(`trashBtn-${card.company.companyId}`)}>
+            <TrashIcon color={card.mobileAppDashboard.accentColor} />
+          </button>
+        </div>
         <BtnMore
           onClick={() => openModal(`moreButton-${card.company.companyId}`)}
           style={{
