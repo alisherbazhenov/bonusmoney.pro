@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export const EyeIcon = ({ color }) => {
   return (
     <svg
@@ -17,4 +19,8 @@ export const EyeIcon = ({ color }) => {
       />
     </svg>
   )
+}
+
+EyeIcon.propTypes = {
+  color: PropTypes.string,
 }

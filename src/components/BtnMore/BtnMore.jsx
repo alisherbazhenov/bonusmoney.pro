@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './BtnMore.module.scss'
 
 export const BtnMore = ({ onClick, style }) => {
@@ -6,4 +7,9 @@ export const BtnMore = ({ onClick, style }) => {
       Подробнее
     </button>
   )
+}
+
+BtnMore.propTypes = {
+  onClick: PropTypes.func,
+  style: PropTypes.object,
 }

@@ -1,37 +1,57 @@
 @import '../../variables.scss';
-.pagePreloader {
-  position: relative;
-  height: $logoSize2;
-  width: 100%;
-}
 
-.pagePreloader .spinner {
-  width: 45px;
-  height: 45px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+.spinnerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  border: 4px solid rgba(0, 0, 0, 0.758);
-  border-top: 4px solid $lightGrey;
-  border-radius: 50%;
-  animation: spin 1.5s linear infinite;
-}
+  .pagePreloader {
+    position: relative;
+    height: 50px;
 
-.spinnerText {
-  font-size: $text-size-2;
-  padding: $margin2;
-  margin-bottom: $margin1;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+    @media (width < 480px) {
+      height: 40px;
+    }
   }
-  100% {
-    transform: rotate(360deg);
+
+  .pagePreloader .spinner {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: -22px;
+
+    border: 4px solid rgba(0, 0, 0, 0.758);
+    border-top: 4px solid $lightGrey;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+
+    @media (width < 480px) {
+      left: -18px;
+      width: 32px;
+      height: 32px;
+      border: 2px solid rgba(0, 0, 0, 0.758);
+      border-top: 2px solid $lightGrey;
+    }
+  }
+
+  .spinnerText {
+    @media (width < 480px) {
+      font-size: 16px;
+      padding: 0 14px 14px;
+    }
+    @media (width > 480px) {
+      font-size: 22px;
+      padding: 0 14px 14px;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

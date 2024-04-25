@@ -3,16 +3,16 @@ import { deleteCard } from '../../features/card/cardSlice'
 import { BtnMore } from '../BtnMore'
 import { Modal } from '../Modal'
 import styles from './CardItem.module.scss'
-import { hideModal, openModal } from '../Modal/Modal'
+import { openModal, hideModal } from '../Modal/Modal'
 import { EyeIcon } from '../../icons/EyeIcon'
 import { TrashIcon } from '../../icons/TrashIcon'
 
 export const CardItem = card => {
   const dispatch = useDispatch()
-  const moreBtnOpen = 'Нажата кнопка "Подробнее"'
-  const trashBtnOpen = 'Нажата кнопка "Удаление карты" '
+  const moreBtnOpen = '"Подробнее"'
+  const trashBtnOpen = '"Удаление карты"'
   const trashBtnClose = 'Удалить'
-  const eyeBtnOpen = 'Нажата кнопка "Подробная информация!" '
+  const eyeBtnOpen = '"Подробная информация!"'
   const btnClose = 'Закрыть'
 
   return (
@@ -51,10 +51,16 @@ export const CardItem = card => {
       </div>
       <div className={styles.bottom}>
         <div className={styles.btnIcons}>
-          <button className={styles.btnEyeTrash} onClick={() => openModal(`eyeBtn-${card.company.companyId}`)}>
+          <button
+            className={`${styles.btnEyeTrash} ${styles.scaleUpVerCenter}`}
+            onClick={() => openModal(`eyeBtn-${card.company.companyId}`)}
+          >
             <EyeIcon color={card.mobileAppDashboard.textColor} />
           </button>
-          <button className={styles.btnEyeTrash} onClick={() => openModal(`trashBtn-${card.company.companyId}`)}>
+          <button
+            className={`${styles.btnEyeTrash} ${styles.scaleUpVerCenter}`}
+            onClick={() => openModal(`trashBtn-${card.company.companyId}`)}
+          >
             <TrashIcon color={card.mobileAppDashboard.accentColor} />
           </button>
         </div>
@@ -67,35 +73,60 @@ export const CardItem = card => {
         />
       </div>
       <Modal id={`moreButton-${card.company.companyId}`}>
-        {moreBtnOpen}
-        <div>{card.mobileAppDashboard.companyName}</div>
-        <div>{card.mobileAppDashboard.companyName}</div>
-        <button onClick={() => hideModal(`moreButton-${card.company.companyId}`)} className={styles.btnOk}>
-          {btnClose}
-        </button>
+        <div className={styles.modalContent}>
+          <div>
+            <span className={styles.modalContentSpan}>Нажата кнопка: </span>
+            {moreBtnOpen}
+          </div>
+          <div>
+            <span className={styles.modalContentSpan}>Название компании: </span>
+            {`"${card.mobileAppDashboard.companyName}"`}
+          </div>
+          <button onClick={() => hideModal(`moreButton-${card.company.companyId}`)} className={styles.btnOk}>
+            {btnClose}
+          </button>
+        </div>
       </Modal>
 
       <Modal id={`trashBtn-${card.company.companyId}`}>
-        {trashBtnOpen}
-        <div>{card.company.companyId}</div>
-        <div>{card.mobileAppDashboard.companyName}</div>
-        <button
-          onClick={() => {
-            dispatch(deleteCard(card.company.companyId))
-            hideModal(`trashBtn-${card.company.companyId}`)
-          }}
-          className={styles.btnOk}
-        >
-          {trashBtnClose}
-        </button>
+        <div className={styles.modalContent}>
+          <div>
+            <span className={styles.modalContentSpan}>Нажата кнопка: </span>
+            {trashBtnOpen}
+          </div>
+          <div>
+            <span className={styles.modalContentSpan}>Название компании: </span>
+            {`"${card.mobileAppDashboard.companyName}"`}
+          </div>
+          <div>
+            <span className={styles.modalContentSpan}>id карты: </span>
+            {card.company.companyId}
+          </div>
+          <button
+            onClick={() => {
+              dispatch(deleteCard(card.company.companyId))
+              hideModal(`trashBtn-${card.company.companyId}`)
+            }}
+            className={styles.btnOk}
+          >
+            {trashBtnClose}
+          </button>
+        </div>
       </Modal>
 
       <Modal id={`eyeBtn-${card.company.companyId}`}>
-        {eyeBtnOpen}
-        <div>{card.company.companyId}</div>
-        <button onClick={() => hideModal(`eyeBtn-${card.company.companyId}`)} className={styles.btnOk}>
-          {btnClose}
-        </button>
+        <div className={styles.modalContent}>
+          <div>
+            <span className={styles.modalContentSpan}>Нажата кнопка: </span>
+            {eyeBtnOpen}
+          </div>
+          <div>
+            <span className={styles.modalContentSpan}>id карты:</span> {`"${card.company.companyId}"`}
+          </div>
+          <button onClick={() => hideModal(`eyeBtn-${card.company.companyId}`)} className={styles.btnOk}>
+            {btnClose}
+          </button>
+        </div>
       </Modal>
     </li>
   )

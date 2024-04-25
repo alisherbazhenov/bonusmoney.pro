@@ -1,17 +1,25 @@
 @import '../../variables.scss';
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  background-color: white;
-  color: $color-blue;
   padding: $margin1 0;
   font-size: $text-size-0;
+  background-color: white;
+
   @media (width > 480px) {
     padding: 24px 0;
     font-size: 30px;
+  }
+
+  .text {
+    color: $color-blue;
   }
 }

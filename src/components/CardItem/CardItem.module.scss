@@ -157,8 +157,62 @@
   .btnOk {
     color: white;
     background-color: $color-blue;
-    padding: $margin2 $margin0;
+    padding: 10px 0;
     border-radius: 12px;
-    margin-bottom: $margin-3vw;
+    transition: 0.2s linear;
+    &:hover {
+      box-shadow: rgba(174, 173, 173, 0.668) 0 0px 0px 40px inset;
+    }
+
+    &:active {
+      transform: translate(0, 5px);
+    }
+  }
+
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    > div {
+      border-bottom: 1px solid rgba(178, 175, 175, 0.552);
+      padding: 0 0 14px;
+    }
+
+    .modalContentSpan {
+      letter-spacing: 0.4rem;
+      display: block;
+      color: $darkGrey;
+      margin-bottom: 2px;
+
+      @media (width < 480px) {
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.scaleUpVerCenter:active {
+  -webkit-animation: scale-up-ver-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-ver-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+@keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
   }
 }

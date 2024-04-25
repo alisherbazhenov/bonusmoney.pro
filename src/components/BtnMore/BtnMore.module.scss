@@ -6,8 +6,18 @@
   color: $color-blue;
   padding: $margin-3vw $margin0;
   font-size: $text-size-2;
+  transition: 0.2s linear;
+
   @media (width > 480px) {
     padding: 14px 40px;
     font-size: 22px;
+  }
+
+  &:hover {
+    box-shadow: rgba(174, 173, 173, 0.668) 0 0px 0px 40px inset;
+  }
+
+  &:active {
+    transform: translate(0, 5px);
   }
 }

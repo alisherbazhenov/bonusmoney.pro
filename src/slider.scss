@@ -1,0 +1,38 @@
+.slick-next:before,
+.slick-prev:before {
+  color: #62bf0b;
+}
+
+.slick-slide {
+  padding: 0 6px;
+}
+
+.slick-slide > div {
+  display: grid;
+  place-items: center;
+  height: 500px;
+  background-color: #ddd2a243;
+  border-radius: 15px;
+}
+
+.slick-prev {
+  left: -22px;
+
+  @media (width < 576px) {
+    left: -16px;
+  }
+}
+
+.slick-next {
+  right: -22px;
+  @media (width < 576px) {
+    right: -16px;
+  }
+}
+
+.slick-dots {
+  display: none !important;
+  @media (width > 768px) {
+    display: block !important;
+  }
+}
