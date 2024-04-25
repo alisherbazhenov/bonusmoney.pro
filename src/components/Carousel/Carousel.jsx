@@ -44,7 +44,7 @@ export const Carousel = () => {
   return (
     <div>
       <div className={styles.appText}>
-        <p className={styles.appDesc}>Учет бонусов компаний</p>
+        <p className={styles.appDesc}>bonusmoney.pro</p>
         <span>
           <i className={styles.iSpan}>mobile version</i>
         </span>
